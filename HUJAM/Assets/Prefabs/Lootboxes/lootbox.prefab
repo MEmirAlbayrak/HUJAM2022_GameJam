@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2265455411047868039}
   - component: {fileID: 4965127883868582870}
   - component: {fileID: -2862835022667275409}
+  - component: {fileID: 7287500818538550353}
   m_Layer: 0
   m_Name: lootbox
   m_TagString: Untagged
@@ -28,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 5910888656692011754}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,7 +97,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.000000059604645, y: 0.25}
@@ -123,3 +124,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &7287500818538550353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5910888656692011754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e31724072c35d7a499542e1c8835ded7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nodePrefs:
+  - {fileID: 5981882665775987495, guid: b9fe44682af01e94da449dc1701e333a, type: 3}
+  - {fileID: 2918815699023269096, guid: cbe10bb163a9d3b4b8dd6b35dcee2ad5, type: 3}
+  - {fileID: 2394506013073486972, guid: 43c0d67eae4d93e4291c0d5bd4f8ae94, type: 3}
+  - {fileID: 4120402980713059364, guid: caf6891edb112bf47bbecb000c521346, type: 3}
+  - {fileID: 8568086697309817770, guid: 15a3c0200e35a024399fb4147de3682b, type: 3}
+  - {fileID: 4559030880629128727, guid: ef6541317282fee45afa3882af08e788, type: 3}
+  - {fileID: 7931289307816960052, guid: 4b0a52fcdc0b1c54b83228c1d359d773, type: 3}

@@ -15,6 +15,8 @@ public abstract class Enemy : MonoBehaviour
 
     public static Transform Target;
     public GameObject explodeParticle;
+    public GameObject explodeParticleRocket;
+
 
     private void OnEnable()
     {
@@ -63,5 +65,10 @@ public abstract class Enemy : MonoBehaviour
         {
             collision.GetComponent<PlayerMovement>().TakeDamage(damage);
         }
+    }
+
+   public void Explode()
+    {
+        Instantiate(explodeParticleRocket, transform.position, Quaternion.identity);
     }
 }

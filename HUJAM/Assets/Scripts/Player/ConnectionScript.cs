@@ -29,7 +29,7 @@ public class ConnectionScript : MonoBehaviour
 
             Debug.Log("Aktif");
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            raycastHit = Physics2D.Raycast(ray.origin, ray.direction);
+            raycastHit = Physics2D.Raycast(ray.origin, ray.direction, 1000);
             if (raycastHit.collider != null)
             {
                 Debug.Log("Inside If");
@@ -121,8 +121,8 @@ public class ConnectionScript : MonoBehaviour
 
         }
         var composer = vCam.GetCinemachineComponent<CinemachineFramingTransposer>();
-        composer.m_DeadZoneWidth = 0.35f;
-        composer.m_DeadZoneHeight = 0.35f;
+        composer.m_DeadZoneWidth = 0.1f;
+        composer.m_DeadZoneHeight = 0.1f;
 
       
     }
@@ -155,7 +155,7 @@ public class ConnectionScript : MonoBehaviour
             composer.m_DeadZoneWidth = 0;
             composer.m_DeadZoneHeight = 0;
 
-            Time.timeScale = 0.1f;
+            Time.timeScale = 0.15f;
             collision.tag = "Player";
 
 

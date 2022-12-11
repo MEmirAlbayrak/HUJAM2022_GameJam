@@ -8,7 +8,7 @@ public class RocketSpawnScript : ItemSpawner
     [SerializeField] ParticleSystem rocketLaunchParticle;
     void Start()
     {
-        maxtimer = 1f;
+        maxtimer = 0.3f;
         curtimer = maxtimer;
     }
 
