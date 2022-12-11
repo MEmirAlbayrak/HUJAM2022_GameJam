@@ -22,12 +22,12 @@ public class BossEnemy : Enemy
 
     public void RotateArms()
     {
-        Arms.transform.Rotate(transform.forward * Time.deltaTime * rotateSpeed);
+        Arms.transform.RotateAround(transform.position,transform.forward,Time.deltaTime*10f  );
     }
 
     void Start()
     {
-        
+        AssignValues();
     }
     private void FixedUpdate()
     {

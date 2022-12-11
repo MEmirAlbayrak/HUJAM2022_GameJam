@@ -355,10 +355,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1301015031, guid: 1b33d82b57744cf4c948d32ce9ac4634, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -65.5
-      objectReference: {fileID: 0}
     - target: {fileID: 8880300560293014710, guid: 1b33d82b57744cf4c948d32ce9ac4634, type: 3}
       propertyPath: m_Name
       value: BoomerangCubuk
@@ -722,10 +718,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1797609817, guid: 4b0a52fcdc0b1c54b83228c1d359d773, type: 3}
-      propertyPath: damage
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 7931289307816960052, guid: 4b0a52fcdc0b1c54b83228c1d359d773, type: 3}
       propertyPath: m_Name
       value: FlameThrower
@@ -2620,10 +2612,6 @@ PrefabInstance:
     - target: {fileID: 8568086697309817770, guid: 15a3c0200e35a024399fb4147de3682b, type: 3}
       propertyPath: m_Name
       value: Freeze
-      objectReference: {fileID: 0}
-    - target: {fileID: 8568086697685829973, guid: 15a3c0200e35a024399fb4147de3682b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15a3c0200e35a024399fb4147de3682b, type: 3}

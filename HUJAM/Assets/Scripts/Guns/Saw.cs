@@ -13,7 +13,7 @@ public class Saw : Collectable , ICanDealDamage
 
     void Start()
     {
-        
+        GetComponent<Collider2D>().enabled = true;
     }
 
     
