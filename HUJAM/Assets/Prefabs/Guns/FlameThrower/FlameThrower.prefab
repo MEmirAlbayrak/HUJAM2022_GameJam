@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 7931289309559680186}
   - component: {fileID: 7931289309559680189}
   - component: {fileID: 273200111}
+  - component: {fileID: 1797609817}
   m_Layer: 0
   m_Name: FlameThrower
   m_TagString: Untagged
@@ -338,6 +339,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1797609817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7931289309559680187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5deaa69516951040a33a272bccb4c78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
 --- !u!1001 &1740472169834661334
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -390,12 +404,20 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3098331540855634236, guid: 246e12a0070f450419564db468f62b72, type: 3}
+      propertyPath: simulationSpeed
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098331540855634236, guid: 246e12a0070f450419564db468f62b72, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3098331540855634236, guid: 246e12a0070f450419564db468f62b72, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 16.9
       objectReference: {fileID: 0}
     - target: {fileID: 3098331540855634236, guid: 246e12a0070f450419564db468f62b72, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 15
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 3098331540855634236, guid: 246e12a0070f450419564db468f62b72, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar

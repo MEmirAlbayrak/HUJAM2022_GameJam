@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4559030880629128721}
   - component: {fileID: 4559030880629128720}
   - component: {fileID: 4559030880629128722}
+  - component: {fileID: 5731236068357282185}
   m_Layer: 0
   m_Name: Boomerang
   m_TagString: Untagged
@@ -101,3 +102,19 @@ MonoBehaviour:
   - {fileID: 0}
   coroutineAllowed: 0
   damage: 20
+--- !u!70 &5731236068357282185
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4559030880629128727}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 11.58, y: 16.93}
+  m_Direction: 0

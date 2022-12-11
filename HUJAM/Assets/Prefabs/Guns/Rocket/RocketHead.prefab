@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -10
-  m_Sprite: {fileID: -708956424, guid: d47713dd42ae26348a60ac182bbb9cd2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: df20c0c45b0454a409c1e1cae7dd4974, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dirRandomizer: 0
-  moveSpeed: 3
+  moveSpeed: 100
   damage: 20
-  rocketExplodeEffect: {fileID: 0}
+  playerTransform: {fileID: 0}
 --- !u!70 &439406976920423868
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -117,8 +117,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.024646282, y: -4.435884}
-  m_Size: {x: 4.789196, y: 9.94}
+  m_Offset: {x: -0.042845726, y: 0.28857183}
+  m_Size: {x: 6.274025, y: 7.3752947}
   m_Direction: 0
 --- !u!1001 &2621343535889748823
 PrefabInstance:
@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4995765554149910387, guid: e000318db7a10b34d96dfbee1995472c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8
+      value: -4.01
       objectReference: {fileID: 0}
     - target: {fileID: 4995765554149910387, guid: e000318db7a10b34d96dfbee1995472c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -247,7 +247,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6694672605892529974, guid: 083c2d93a4e698d4d8f4985f49bfbfcf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.75
+      value: -3.76
       objectReference: {fileID: 0}
     - target: {fileID: 6694672605892529974, guid: 083c2d93a4e698d4d8f4985f49bfbfcf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -280,6 +280,18 @@ PrefabInstance:
     - target: {fileID: 6694672605892529974, guid: 083c2d93a4e698d4d8f4985f49bfbfcf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694672605892529975, guid: 083c2d93a4e698d4d8f4985f49bfbfcf, type: 3}
+      propertyPath: simulationSpeed
+      value: 2.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694672605892529975, guid: 083c2d93a4e698d4d8f4985f49bfbfcf, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6694672605892529975, guid: 083c2d93a4e698d4d8f4985f49bfbfcf, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6694672605892529976, guid: 083c2d93a4e698d4d8f4985f49bfbfcf, type: 3}
       propertyPath: m_SortingOrder

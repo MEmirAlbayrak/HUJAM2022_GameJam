@@ -22,22 +22,7 @@ public class FreezeEffect : MonoBehaviour
     }
     private void Update()
     {
-        if (curtime <= 0)
-        {
-
-           ScaleMask();
-            
-            //maskObjectSpriteRenderer.color = new Color(255, 255, 255, opacityRate);
-            curtime = maxtime;
-           
-        }
-        else
-        {
-
-            //maskObjectSpriteRenderer.color = new Color(255, 255, 255, opacityRate);
-            HideSprite();
-            curtime -= Time.deltaTime;
-        }
+       
     }
 
 

@@ -24,6 +24,7 @@ public class ShootingLaser : ItemSpawner
         else
         {
             ObjGO = Instantiate(prefabObj, SpawnPoint.transform.position, transform.rotation);
+            ObjGO.GetComponent<LaserMove>().MovePos = transform.rotation.z;
             curtimer = maxtimer;
         }
        

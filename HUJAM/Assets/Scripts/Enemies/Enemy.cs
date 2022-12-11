@@ -32,20 +32,28 @@ public abstract class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        
+    }
+    public void Explode()
+    {
         Instantiate(explodeParticle, transform.position, Quaternion.identity);
+
     }
     public void SlowDown(float amount)
     {
         moveSpeed = amount;
+        Debug.Log(moveSpeed);
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
+            if(collision.GetComponent<PlayerMovement>() !=null)
+                collision.GetComponent<PlayerMovement>().TakeDamage(damage);
 
-            collision.GetComponent<PlayerMovement>().TakeDamage(damage);
 
-            
+
+
         }
     }
 }
