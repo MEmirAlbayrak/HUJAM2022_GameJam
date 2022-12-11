@@ -9,10 +9,10 @@ public class RangedEnemy : Enemy
     {
         AssignValues();
     }
-    
+
     private void FixedUpdate()
     {
-        //Move();
+        Move();
     }
 
     public override void Move()
@@ -22,13 +22,7 @@ public class RangedEnemy : Enemy
         // transform.rotation = Quaternion.Euler(new Vector3(0, 0 , angle));
 
         transform.right = Target.position - transform.position;
-        
-        transform.position = Vector3.MoveTowards(transform.position, Target.position, moveSpeed);
-        
-    }
 
-    public override void EnemyDied()
-    {
-        //throw new System.NotImplementedException();
+        transform.position = Vector3.MoveTowards(transform.position, Target.position, moveSpeed);
     }
 }

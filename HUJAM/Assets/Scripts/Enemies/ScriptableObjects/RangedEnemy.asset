@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tag: RangedEnemy
   health: 70
-  moveSpeed: 5
+  moveSpeed: 1
   rotationSpeed: 5
   damage: 10
   isRanged: 1
+  isElite: 0

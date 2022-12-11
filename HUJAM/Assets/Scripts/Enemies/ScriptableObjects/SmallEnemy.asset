@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tag: SmallEnemy
   health: 100
-  moveSpeed: 5
+  moveSpeed: 1
   rotationSpeed: 5
   damage: 20
   isRanged: 0
+  isElite: 0

@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tag: HeavyEnemy
   health: 200
-  moveSpeed: 3
+  moveSpeed: 1
   rotationSpeed: 3
   damage: 50
   isRanged: 0
+  isElite: 0

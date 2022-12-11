@@ -11,4 +11,5 @@ public class EnemyValuesSO : ScriptableObject
     public float rotationSpeed;
     public float damage;
     public bool isRanged;
+    public bool isElite;
 }
