@@ -19,6 +19,8 @@ public class RocketString : MonoBehaviour , ICanDealDamage
     [SerializeField] Transform playerTransform;
     float playerup;
 
+    public bool _isPlayerRocket;
+
     private void Start()
     {
         maxtimer = 1.3f;
@@ -63,19 +65,28 @@ public class RocketString : MonoBehaviour , ICanDealDamage
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Enemy>() != null)
+        if (_isPlayerRocket)
         {
-            DealDamage(Damage, collision.GetComponent<Enemy>());
-            collision.GetComponent<Enemy>().Explode();
-            Destroy(gameObject);
+            if (collision.GetComponent<Enemy>() != null)
+            {
+                DealDamage(Damage, collision.GetComponent<Enemy>());
+                collision.GetComponent<Enemy>().Explode();
+                Destroy(gameObject);
+            }
+        }
+        else
+        {
+            if (collision.GetComponent<PlayerMovement>() != null)
+            {
+                var player = collision.GetComponent<PlayerMovement>();
+                player.hp -= damage;
+                Destroy(gameObject);
+            }
         }
     }
 
     public void DealDamage(float damage, Enemy enemy)
     {
         enemy.TakeDamage(damage);
-       
-
-
     }
 }
