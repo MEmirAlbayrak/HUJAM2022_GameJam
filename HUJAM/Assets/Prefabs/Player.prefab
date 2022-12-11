@@ -549,6 +549,8 @@ MonoBehaviour:
   rb: {fileID: 3856056526076137143}
   moveSpeed: 100
   hp: 100
+  vCam: {fileID: 0}
+  damageImage: {fileID: 0}
   starsGameobject: {fileID: 0}
   parallaxEffect: 0
 --- !u!114 &3856056526076137140

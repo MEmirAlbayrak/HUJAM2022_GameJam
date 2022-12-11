@@ -12,4 +12,5 @@ public class EnemyValuesSO : ScriptableObject
     public float damage;
     public bool isRanged;
     public bool isElite;
+    public AudioClip getHitSoundFX;
 }
