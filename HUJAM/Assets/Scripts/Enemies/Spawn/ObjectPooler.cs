@@ -54,17 +54,43 @@ public class ObjectPooler : MonoBehaviour
             newObject.SetActive(true);
             return newObject;
         }
-        // else
-        // {
-        //     GameObject newObject = Instantiate(desiredPool.Prefab) as GameObject;
-        //     return newObject;
-        // }
+         else
+         {
+             GameObject newObject = Instantiate(desiredPool.Prefab) as GameObject;
+             return newObject;
+         }
+        return null;
+    }
+
+    public GameObject GetObject(GameObject targetPrefab)
+    {
+        var desiredPool = PoolList.Find(p => p.Prefab == targetPrefab);
+
+        if (desiredPool.ObjectPool.Count > 0)
+        {
+            GameObject newObject = desiredPool.ObjectPool.Dequeue();
+            newObject.SetActive(true);
+            return newObject;
+        }
+        else
+        {
+            GameObject newObject = Instantiate(desiredPool.Prefab) as GameObject;
+            return newObject;
+        }
         return null;
     }
 
     public void ReturnObject(string poolTag, GameObject objectToReturn)
     {
         var desiredPool = PoolList.Find(p => p.Tag == poolTag);
+
+        desiredPool.ObjectPool.Enqueue(objectToReturn);
+        objectToReturn.SetActive(false);
+    }
+
+    public void ReturnObject(GameObject objectToReturn)
+    {
+        var desiredPool = PoolList.Find(p => p.Prefab == objectToReturn);
         
         desiredPool.ObjectPool.Enqueue(objectToReturn);
         objectToReturn.SetActive(false);

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [System.Serializable]
+    [Serializable]
     public class SpawnInfo
     {
         public string Tag;      // Must be the same as in the Object Pooler! 
@@ -38,7 +38,7 @@ public class Spawner : MonoBehaviour
                 try
                 {
                     GameObject newObject = _objectPool.GetObject(spawning.Tag);
-                    newObject.transform.position = this.transform.position;
+                    newObject.transform.position = this.transform.position;     // Change here to Random!!
                     spawning.timeSinceSpawn = 0f;
                 }
                 catch (NullReferenceException e)
