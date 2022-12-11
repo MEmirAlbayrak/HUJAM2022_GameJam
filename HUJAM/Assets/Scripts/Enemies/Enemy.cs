@@ -36,7 +36,7 @@ public abstract class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        
+
         if (health <= 0)
         {
             EnemyDied();
@@ -51,11 +51,11 @@ public abstract class Enemy : MonoBehaviour
     public void EnemyDied()
     {
         Instantiate(explodeParticle, transform.position, Quaternion.identity);
-            
+
         GameObject lootbox = Instantiate(lootboxes[Random.Range(0, lootboxes.Count)], transform.position,
             Quaternion.Euler(new Vector3(Random.Range(-1f, 1f), 0))) as GameObject;
         lootbox.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
-        
+
         Destroy(this.gameObject);
     }
 
@@ -63,11 +63,14 @@ public abstract class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerMovement>().TakeDamage(damage);
+            if (collision.GetComponent<PlayerMovement>() != null)
+            { 
+               collision.GetComponent<PlayerMovement>().TakeDamage(damage);
+            }
         }
     }
 
-   public void Explode()
+    public void Explode()
     {
         Instantiate(explodeParticleRocket, transform.position, Quaternion.identity);
     }
