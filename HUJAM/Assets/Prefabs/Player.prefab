@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 110
-  m_Sprite: {fileID: 21300000, guid: 7a0b1020b0e034944a36e2ffa7b8508e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad6460140286f494c97dfe7cef69847d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,8 +98,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.26108068, y: 0.05234956}
-  m_Size: {x: 6.4812036, y: 6.481203}
+  m_Offset: {x: -0.09104775, y: 0.9177844}
+  m_Size: {x: 6.126518, y: 9.045877}
   m_Direction: 0
 --- !u!1 &3856056524262879201
 GameObject:
@@ -175,7 +175,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 110
-  m_Sprite: {fileID: 21300000, guid: 7a0b1020b0e034944a36e2ffa7b8508e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad6460140286f494c97dfe7cef69847d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -199,8 +199,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.39099932, y: 0.9081831}
-  m_Size: {x: 8.193097, y: 8.193098}
+  m_Offset: {x: -0.42965412, y: 2.1812763}
+  m_Size: {x: 8.496946, y: 8.496946}
   m_Direction: 0
 --- !u!1 &3856056524749709004
 GameObject:
@@ -276,7 +276,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 110
-  m_Sprite: {fileID: 21300000, guid: 7a0b1020b0e034944a36e2ffa7b8508e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad6460140286f494c97dfe7cef69847d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -300,8 +300,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0016822815, y: 0.48464394}
-  m_Size: {x: 7.3460197, y: 7.3460197}
+  m_Offset: {x: -0.19155121, y: 1.0329804}
+  m_Size: {x: 6.4969826, y: 7.920434}
   m_Direction: 0
 --- !u!1 &3856056525535834919
 GameObject:
@@ -377,7 +377,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 110
-  m_Sprite: {fileID: 21300000, guid: 7a0b1020b0e034944a36e2ffa7b8508e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad6460140286f494c97dfe7cef69847d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -401,8 +401,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.41871637, y: 1.1019094}
-  m_Size: {x: 8.580139, y: 8.580139}
+  m_Offset: {x: 0.16291687, y: -0.4978775}
+  m_Size: {x: 6.9731445, y: 6.973145}
   m_Direction: 0
 --- !u!1 &3856056526076137138
 GameObject:
@@ -528,11 +528,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07391977, y: -0.29935503}
-  m_Size: {x: 10.676654, y: 11.366305}
+  m_Offset: {x: 0.13900661, y: 0.106850624}
+  m_Size: {x: 8.9492035, y: 9.720804}
   m_Direction: 0
 --- !u!114 &3856056526076137141
 MonoBehaviour:
@@ -549,6 +549,8 @@ MonoBehaviour:
   rb: {fileID: 3856056526076137143}
   moveSpeed: 100
   hp: 100
+  starsGameobject: {fileID: 0}
+  parallaxEffect: 0
 --- !u!114 &3856056526076137140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,8 +568,8 @@ MonoBehaviour:
   vCam: {fileID: 0}
   tempUiConnectionPoint: {fileID: 0}
   rb: {fileID: 3856056526076137143}
-  hoverSprite: {fileID: 21300000, guid: ed62d1ecbf185ae46a3a4ac44d3a6772, type: 3}
-  defultSprite: {fileID: 21300000, guid: 7a0b1020b0e034944a36e2ffa7b8508e, type: 3}
+  hoverSprite: {fileID: 21300000, guid: 773e8a2c27bbec543a2184dc21641473, type: 3}
+  defultSprite: {fileID: 21300000, guid: ad6460140286f494c97dfe7cef69847d, type: 3}
   cameraGO: {fileID: 0}
   _tempOrderLayer: 100
 --- !u!114 &3856056526076137131
