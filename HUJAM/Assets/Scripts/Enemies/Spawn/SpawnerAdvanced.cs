@@ -49,6 +49,7 @@ public class SpawnerAdvanced : MonoBehaviour
             {
                 GameObject newObject = _objectPool.GetObject(EnemyQueue.Dequeue());
                 newObject.transform.position = spawnPlaces[Random.Range(0, spawnPlaces.Count)].position;
+                _currentStage.timeSinceSpawn = 0f;
             }
         }
     }
