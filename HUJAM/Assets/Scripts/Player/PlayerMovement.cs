@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float moveSpeed;
     [SerializeField] public float hp;
+    [SerializeField] AudioClip getHitSFX;
 
     private void Start()
     {
@@ -30,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(float damage)
     {
         if (hp > 0)
-        {   
+        {
+            SoundManager.Instance.Play(getHitSFX);
             hp -= damage;
 
         }

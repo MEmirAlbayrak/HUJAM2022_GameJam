@@ -10,12 +10,15 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected List<GameObject> lootboxes;
     protected float health;
     protected float moveSpeed;
+    
     //protected float rotationSpeed;
     protected float damage;
 
     public static Transform Target;
     public GameObject explodeParticle;
     public GameObject explodeParticleRocket;
+
+    [SerializeField]
 
 
     private void OnEnable()
@@ -36,7 +39,8 @@ public abstract class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        
+
+        SoundManager.Instance.Play(valuesSO.getHitSoundFX);
         if (health <= 0)
         {
             EnemyDied();
@@ -63,7 +67,10 @@ public abstract class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.GetComponent<PlayerMovement>().TakeDamage(damage);
+            if(collision.GetComponent<PlayerMovement>() !=null)
+                collision.GetComponent<PlayerMovement>().TakeDamage(damage);
+
+
         }
     }
 
