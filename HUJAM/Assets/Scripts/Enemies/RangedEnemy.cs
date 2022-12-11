@@ -35,7 +35,7 @@ public class RangedEnemy : Enemy
     {
         while (true)
         {
-            yield return new WaitForSecondsRealtime(Random.Range(2f, 4f));
+            yield return new WaitForSecondsRealtime(Random.Range(4f, 6f));
             Instantiate(rocketPrefab, shootingPoints[0].transform);
             Instantiate(rocketPrefab, shootingPoints[1].transform);
         }

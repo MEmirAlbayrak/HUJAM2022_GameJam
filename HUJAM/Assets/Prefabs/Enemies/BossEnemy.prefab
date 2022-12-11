@@ -237,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valuesSO: {fileID: 11400000, guid: 786395169a16b5142a1fda9a3f96b547, type: 2}
   lootboxes: []
+  rb: {fileID: 4130518869001811815}
   explodeParticle: {fileID: 5437650651716103334, guid: c22447c7fc31c8f4b880941a5f0656b5, type: 3}
   explodeParticleRocket: {fileID: 9212034957704582600, guid: 9590b16026a96e94fb00652a81d14da3, type: 3}
   Arms: {fileID: 735364856535921567}
