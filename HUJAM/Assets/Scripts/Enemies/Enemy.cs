@@ -8,8 +8,10 @@ public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] internal EnemyValuesSO valuesSO;
     [SerializeField] protected List<GameObject> lootboxes;
+    [SerializeField] protected Rigidbody2D rb; 
     protected float health;
     protected float moveSpeed;
+    
     
     //protected float rotationSpeed;
     protected float damage;
@@ -39,6 +41,11 @@ public abstract class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+        
+        rb.AddForce((transform.position - Target.transform.position).normalized * 5f, ForceMode2D.Impulse);  //Get pushed
+        
+        Debug.Log(valuesSO.getHitSoundFX);
+        Debug.Log(SoundManager.Instance);
 
         SoundManager.Instance.Play(valuesSO.getHitSoundFX);
         if (health <= 0)
