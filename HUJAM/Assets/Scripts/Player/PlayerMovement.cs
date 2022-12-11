@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     float timer;
     bool damagedDealed;
     [SerializeField] Image damageImage;
+    [SerializeField] AudioClip getHitSFX;
 
     private void Start()
     {
@@ -44,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         if (hp > 0)
         {
             hp -= damage;
+            SoundManager.Instance.Play(getHitSFX);
             StartCoroutine(_ProcessShake(10, 0.5f));
             damagedDealed = true;
 

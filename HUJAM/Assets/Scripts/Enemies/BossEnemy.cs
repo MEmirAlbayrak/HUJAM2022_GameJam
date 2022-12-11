@@ -12,6 +12,7 @@ public class BossEnemy : Enemy
     [SerializeField] GameObject[] enemyList;
     public override void Move()
     {
+        Debug.Log("HERE");
         var angle = Mathf.Atan2(Target.position.y - transform.position.y, Target.position.x - transform.position.x) *
                   Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
@@ -32,6 +33,7 @@ public class BossEnemy : Enemy
     {
         Move();
         RotateArms();
+        Debug.Log(Target + "TARGET");
     }
     // Update is called once per frame
     void Update()
