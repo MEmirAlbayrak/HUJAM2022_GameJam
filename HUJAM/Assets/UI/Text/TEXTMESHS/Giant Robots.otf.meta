@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: f2b9130c97c06b941a9190a6a4879c6c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Giant Robots
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 01cf5bce94ad9ef42b4e5cac5a21a183, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
