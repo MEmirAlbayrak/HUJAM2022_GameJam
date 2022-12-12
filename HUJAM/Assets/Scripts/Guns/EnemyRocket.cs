@@ -17,11 +17,10 @@ public class EnemyRocket : MonoBehaviour
 
     void Start()
     {
+        rocketRb.AddForce(transform.up * rocketSpeed, ForceMode2D.Impulse);
         rocketRb.transform.SetParent(null);
-        rocketRb.transform.localEulerAngles = new Vector3(0f, 0f, _player.transform.position.z - transform.position.z);
-        rocketRb.AddForce((_player.transform.position - transform.position).normalized * rocketSpeed,
-            ForceMode2D.Impulse);
-        
+        //rocketRb.transform.localEulerAngles = new Vector3(0f, 0f, _player.transform.position.z - transform.position.z);
+
         Destroy(gameObject, timeAlive);
     }
 }
