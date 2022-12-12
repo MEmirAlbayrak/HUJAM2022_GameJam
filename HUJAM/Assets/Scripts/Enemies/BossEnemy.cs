@@ -29,13 +29,13 @@ public class BossEnemy : Enemy
     }
     private void Awake()
     {
-        winCanvas = GameObject.Find("YouWinPanel");
+       
     }
-
+       
     void Start()
     {
 
-        
+        CanvasHandler.Instance.bossHpBar.SetActive(true);
 
         AssignValues();
        
@@ -61,7 +61,7 @@ public class BossEnemy : Enemy
     {
         
         health -= damage;
-
+        CanvasHandler.Instance.bossHpSlider.value = health;
         StartCoroutine(Flash());
 
         Debug.Log(valuesSO.getHitSoundFX);
@@ -73,14 +73,16 @@ public class BossEnemy : Enemy
         if (health <= 0)
         {
             EnemyDied();
-            winCanvas.SetActive(true);
+            CanvasHandler.Instance.bossHpBar.SetActive(false);
+            CanvasHandler.Instance.winPanel.SetActive(true);
+            
             Time.timeScale = 0;
         }
     }
 
     public void HandleDamage()
     {
-        Debug.Log(health);
+        
         if (health <= checkPoint)
         {
             if (armIndex + 2 < enemyList.Length )

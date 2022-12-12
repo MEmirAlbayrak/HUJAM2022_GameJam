@@ -419,7 +419,6 @@ GameObject:
   - component: {fileID: 3856056526076137141}
   - component: {fileID: 3856056526076137140}
   - component: {fileID: 3856056526076137131}
-  - component: {fileID: 2471971832831328340}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -528,7 +527,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 3856056526076137138}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: e3e1b8431564dd14db63ec8e54545892, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -553,9 +552,13 @@ MonoBehaviour:
   vCam: {fileID: 0}
   damageImage: {fileID: 0}
   getHitSFX: {fileID: 8300000, guid: 3cbfd3af323abb54eb021bbd9aabc6ce, type: 3}
-  dieSFX: {fileID: 0}
+  dieSFX: {fileID: 8300000, guid: 7045640c66fc6f549bb0e8bf8ac124f3, type: 3}
   hpSlider: {fileID: 0}
+  tryAgainCanvas: {fileID: 0}
   starsGameobject: {fileID: 0}
+  starsGameobject1: {fileID: 0}
+  starsGameobject2: {fileID: 0}
+  starsGameobject3: {fileID: 0}
   parallaxEffect: 0
 --- !u!114 &3856056526076137140
 MonoBehaviour:
@@ -590,19 +593,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dafbd1c8089f904aa7d821ce2f66597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!70 &2471971832831328340
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3856056526076137138}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: e3e1b8431564dd14db63ec8e54545892, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.03493309, y: 0.17466068}
-  m_Size: {x: 6.9802017, y: 6.9802017}
-  m_Direction: 0

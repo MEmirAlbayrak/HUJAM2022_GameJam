@@ -104,13 +104,25 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 lastPlayerpos;
     [SerializeField] GameObject starsGameobject;
+    [SerializeField] GameObject starsGameobject1;
+    [SerializeField] GameObject starsGameobject2;
+    [SerializeField] GameObject starsGameobject3;
     [SerializeField, Range(0, 1)] float parallaxEffect;
 
     public void StarsParallax()
     {
         Vector3 deltaMovement = transform.position - lastPlayerpos;
-        parallaxEffect = 0.2f;
+        parallaxEffect = 0.1f;
+
+
+
         starsGameobject.transform.position += deltaMovement * parallaxEffect * -1;
+        starsGameobject1.transform.position += deltaMovement * parallaxEffect * -1;
+        starsGameobject2.transform.position += deltaMovement * parallaxEffect * -1;
+        starsGameobject3.transform.position += deltaMovement * parallaxEffect * -1;
+
+
+
         lastPlayerpos = transform.position;
     }
 }
