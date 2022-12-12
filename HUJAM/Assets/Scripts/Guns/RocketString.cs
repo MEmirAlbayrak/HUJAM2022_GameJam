@@ -19,6 +19,8 @@ public class RocketString : MonoBehaviour , ICanDealDamage
     [SerializeField] Transform playerTransform;
     float playerup;
 
+    public bool _isPlayerRocket;
+
     private void Start()
     {
         maxtimer = 1.3f;
@@ -40,7 +42,7 @@ public class RocketString : MonoBehaviour , ICanDealDamage
     {
         if (curtimer >= 1)
         {
-            Debug.Log("Player  " + playerup + "  Local Rot: " + transform.rotation.z);
+            
             curtimer -= Time.deltaTime;
             //Quaternion tempTarget = Quaternion.Euler(transform.rotation.x, transform.rotation.y, dirRandomizer );
             Quaternion tempTarget = Quaternion.Euler(transform.rotation.x, transform.rotation.y, playerup);
@@ -49,7 +51,7 @@ public class RocketString : MonoBehaviour , ICanDealDamage
         }
         else if (curtimer >= 0.5f)
         {
-            Debug.Log("Player  " + playerup + "  Local Rot: " + transform.rotation.z);
+           
             curtimer -= Time.deltaTime;
             Quaternion tempTarget = Quaternion.Euler(transform.rotation.x, transform.rotation.y, dirRandomizer);
             transform.rotation = Quaternion.Lerp(transform.rotation, tempTarget, Time.deltaTime);
@@ -63,19 +65,20 @@ public class RocketString : MonoBehaviour , ICanDealDamage
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Enemy>() != null)
+        if (_isPlayerRocket)
         {
-            DealDamage(Damage, collision.GetComponent<Enemy>());
-            collision.GetComponent<Enemy>().Explode();
-            Destroy(gameObject);
+            if (collision.GetComponent<Enemy>() != null)
+            {
+                DealDamage(Damage, collision.GetComponent<Enemy>());
+                collision.GetComponent<Enemy>().Explode();
+                Destroy(gameObject);
+            }
         }
+     
     }
 
     public void DealDamage(float damage, Enemy enemy)
     {
         enemy.TakeDamage(damage);
-       
-
-
     }
 }

@@ -17,6 +17,9 @@ public class FreezeDamageScript : MonoBehaviour , ICanDealDamage
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.GetComponent<Enemy>().SlowDown(slowAmount);
+        if(collision.GetComponent<Enemy>() !=null)
+            collision.GetComponent<Enemy>().SlowDown(slowAmount);
+
+
     }
 }

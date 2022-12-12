@@ -104,6 +104,7 @@ MonoBehaviour:
   moveSpeed: 100
   damage: 20
   playerTransform: {fileID: 0}
+  _isPlayerRocket: 1
 --- !u!70 &439406976920423868
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

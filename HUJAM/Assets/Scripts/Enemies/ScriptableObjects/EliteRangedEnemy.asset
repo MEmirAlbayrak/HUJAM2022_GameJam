@@ -18,4 +18,5 @@ MonoBehaviour:
   rotationSpeed: 5
   damage: 50
   isRanged: 1
-  isElite: 0
+  isElite: 1
+  getHitSoundFX: {fileID: 8300000, guid: af06d7def0d3ca74fbfc8ba4dbe8e634, type: 3}

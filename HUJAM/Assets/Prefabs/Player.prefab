@@ -528,7 +528,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.13900661, y: 0.106850624}
@@ -549,6 +549,9 @@ MonoBehaviour:
   rb: {fileID: 3856056526076137143}
   moveSpeed: 100
   hp: 100
+  vCam: {fileID: 0}
+  damageImage: {fileID: 0}
+  getHitSFX: {fileID: 8300000, guid: ed956535491f5f44682250ae9fe73b70, type: 3}
   starsGameobject: {fileID: 0}
   parallaxEffect: 0
 --- !u!114 &3856056526076137140

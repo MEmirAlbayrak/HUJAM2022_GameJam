@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2569071085280690674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2064847400529978337}
+  m_Layer: 0
+  m_Name: ShootingPoint (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2064847400529978337
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2569071085280690674}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
+  m_LocalPosition: {x: -0.29, y: -17.64, z: -0.047954217}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4035785186574162127}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!1 &3223710324243312367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8455570692117111878}
+  m_Layer: 0
+  m_Name: ShootingPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8455570692117111878
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3223710324243312367}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.29, y: 16.86, z: -0.047954217}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4035785186574162127}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3558610856886398513
 GameObject:
   m_ObjectHideFlags: 0
@@ -14,6 +76,8 @@ GameObject:
   - component: {fileID: 7347152532783841017}
   - component: {fileID: 5587816226641711758}
   - component: {fileID: 1076736553975365565}
+  - component: {fileID: 7237105885090759979}
+  - component: {fileID: 5527333600691594230}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Untagged
@@ -32,7 +96,9 @@ Transform:
   m_LocalPosition: {x: 0.44103846, y: -0.44282058, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8455570692117111878}
+  - {fileID: 2064847400529978337}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -153,5 +219,41 @@ MonoBehaviour:
   valuesSO: {fileID: 11400000, guid: 2317d394eabe227478a0835919e70491, type: 2}
   lootboxes:
   - {fileID: 5910888656692011754, guid: 1ed5a122992238346aa7d6b33d93e9d1, type: 3}
+  rb: {fileID: -6455799514694293912}
+  defaultMaterial: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  flashMaterial: {fileID: 2100000, guid: 194328eb197587c4fb4690d563240004, type: 2}
   explodeParticle: {fileID: 5437650651716103334, guid: c22447c7fc31c8f4b880941a5f0656b5, type: 3}
   explodeParticleRocket: {fileID: 9212034957704582600, guid: 9590b16026a96e94fb00652a81d14da3, type: 3}
+  spinSpeed: 2.5
+--- !u!114 &7237105885090759979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3558610856886398513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e93ccb9204d134e81b9166dc05f3a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingPoints:
+  - {fileID: 3223710324243312367}
+  - {fileID: 2569071085280690674}
+  rocketPrefab: {fileID: 4698682981687698649, guid: c76423ac0052484439eada4c8b80ac5e, type: 3}
+--- !u!114 &5527333600691594230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3558610856886398513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e93ccb9204d134e81b9166dc05f3a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootingPoints:
+  - {fileID: 3223710324243312367}
+  - {fileID: 2569071085280690674}
+  rocketPrefab: {fileID: 4698682981687698649, guid: c76423ac0052484439eada4c8b80ac5e, type: 3}
