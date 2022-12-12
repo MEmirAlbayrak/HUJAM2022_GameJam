@@ -44,7 +44,7 @@ public abstract class Enemy : MonoBehaviour
 
     public abstract void Move();
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         health -= damage;
 

@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class BossEnemy : Enemy
 {
-
     [SerializeField] GameObject Arms;
     [SerializeField] float rotateSpeed;
-    [SerializeField] int armIndex=0;
+    [SerializeField] int armIndex = 0;
     [SerializeField] int checkPoint = 80;
     [SerializeField] RangedEnemy[] enemyList;
+
     public override void Move()
     {
         Debug.Log("HERE");
         var angle = Mathf.Atan2(Target.position.y - transform.position.y, Target.position.x - transform.position.x) *
-                  Mathf.Rad2Deg;
+                    Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle - 90));
 
         transform.position = Vector3.MoveTowards(transform.position, Target.position, moveSpeed);
@@ -22,7 +22,7 @@ public class BossEnemy : Enemy
 
     public void RotateArms()
     {
-        Arms.transform.RotateAround(transform.position,transform.forward,Time.deltaTime*10f  );
+        Arms.transform.RotateAround(transform.position, transform.forward, Time.deltaTime * 10f);
     }
 
     void Start()
@@ -36,38 +36,53 @@ public class BossEnemy : Enemy
                 child.GetComponent<RangedEnemy>().ResetMoveSpeed(0);
                 child.GetComponent<Collider2D>().enabled = false;
                 //child.GetComponent<RangedEnemy>().moveSpeed = 0f;
-
             }
-
         }
     }
+
     private void FixedUpdate()
     {
         Move();
         RotateArms();
-       
     }
+
     // Update is called once per frame
-    void Update()
+    public override void TakeDamage(float damage)
     {
-        
+        health -= damage;
+
+        StartCoroutine(Flash());
+
+        Debug.Log(valuesSO.getHitSoundFX);
+        Debug.Log(SoundManager.Instance);
+        if (GetComponent<BossEnemy>() != null)
+            GetComponent<BossEnemy>().HandleDamage();
+
+        SoundManager.Instance.Play(valuesSO.getHitSoundFX);
+        if (health <= 0)
+        {
+            EnemyDied();
+        }
     }
- 
+
     public void HandleDamage()
     {
         Debug.Log(health);
-        if(health == checkPoint)
+        if (health <= checkPoint)
         {
-            Debug.Log("ARMMM" + armIndex);
-            enemyList[armIndex].ResetMoveSpeed(enemyList[armIndex].valuesSO.moveSpeed);
-            enemyList[armIndex].GetComponent<Collider2D>().enabled = true;
-            enemyList[armIndex].gameObject.transform.parent = null;
+            if (armIndex + 2 < enemyList.Length )
+            {
+                Debug.Log("ARMMM" + armIndex);
+                enemyList[armIndex].ResetMoveSpeed(enemyList[armIndex].valuesSO.moveSpeed);
+                enemyList[armIndex].GetComponent<Collider2D>().enabled = true;
+                enemyList[armIndex].gameObject.transform.parent = null;
 
-            enemyList[armIndex + 1].ResetMoveSpeed(enemyList[armIndex + 1].valuesSO.moveSpeed);
-            enemyList[armIndex+1].GetComponent<Collider2D>().enabled = true;
-            enemyList[armIndex+1].transform.parent = null;
-            armIndex += 2;
-            checkPoint -= 20;
+                enemyList[armIndex + 1].ResetMoveSpeed(enemyList[armIndex + 1].valuesSO.moveSpeed);
+                enemyList[armIndex + 1].GetComponent<Collider2D>().enabled = true;
+                enemyList[armIndex + 1].transform.parent = null;
+                armIndex += 2;
+                checkPoint -= 20;
+            }
         }
         //switch(health)
         //{

@@ -54,11 +54,11 @@ public class ObjectPooler : MonoBehaviour
             newObject.SetActive(true);
             return newObject;
         }
-         else
-         {
-             GameObject newObject = Instantiate(desiredPool.Prefab) as GameObject;
-             return newObject;
-         }
+        else
+        {
+            GameObject newObject = Instantiate(desiredPool.Prefab) as GameObject;
+            return newObject;
+        }
         return null;
     }
 
