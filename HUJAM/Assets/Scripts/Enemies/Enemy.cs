@@ -8,7 +8,11 @@ public abstract class Enemy : MonoBehaviour
 {
     [SerializeField] internal EnemyValuesSO valuesSO;
     [SerializeField] protected List<GameObject> lootboxes;
-    [SerializeField] protected Rigidbody2D rb; 
+    [SerializeField] protected Rigidbody2D rb;
+    [SerializeField] protected Material defaultMaterial;
+    [SerializeField] protected Material flashMaterial;
+    
+        
     protected float health;
     protected float moveSpeed;
     
@@ -19,6 +23,7 @@ public abstract class Enemy : MonoBehaviour
     public static Transform Target;
     public GameObject explodeParticle;
     public GameObject explodeParticleRocket;
+    protected SpriteRenderer enemySpriteRenderer;
 
     [SerializeField]
 
@@ -26,6 +31,7 @@ public abstract class Enemy : MonoBehaviour
     private void OnEnable()
     {
         Target = GameObject.FindWithTag("Player").transform;
+        enemySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     protected void AssignValues()
@@ -41,8 +47,10 @@ public abstract class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
+
+        StartCoroutine(Flash());
         
-        rb.AddForce((transform.position - Target.transform.position).normalized * 5f, ForceMode2D.Impulse);  //Get pushed
+        rb.AddForce((transform.position - Target.transform.position).normalized * 20f, ForceMode2D.Impulse);  //Get pushed
         
         Debug.Log(valuesSO.getHitSoundFX);
         Debug.Log(SoundManager.Instance);
@@ -57,6 +65,13 @@ public abstract class Enemy : MonoBehaviour
     public void SlowDown(float amount)
     {
         moveSpeed = amount;
+    }
+
+    public IEnumerator Flash()
+    {
+        enemySpriteRenderer.material = flashMaterial;
+        yield return new WaitForSecondsRealtime(0.25f);
+        enemySpriteRenderer.material= defaultMaterial;
     }
 
     public void EnemyDied()
