@@ -7,14 +7,19 @@ using UnityEngine.UI;
 public class TextScript : MonoBehaviour
 {
 	public TextMeshProUGUI text;
+	public float TextSecond;
 
-	void Start()
+	void OnEnable()
 	{
+			
 		StartCoroutine(RevealText());
 	}
 
 	IEnumerator RevealText()
 	{
+		
+		yield return new WaitForSeconds(TextSecond);
+		text.enabled = true;
 		var originalString = text.text;
 		text.text = "";
 

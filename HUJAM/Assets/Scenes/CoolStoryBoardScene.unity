@@ -373,6 +373,7 @@ GameObject:
   - component: {fileID: 423539450}
   - component: {fileID: 423539449}
   - component: {fileID: 423539452}
+  - component: {fileID: 423539453}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -466,6 +467,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &423539453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423539448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38cec9e27e8a0504e93b66eb347ff46e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &559914456
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,6 +558,7 @@ GameObject:
   - component: {fileID: 954596844}
   - component: {fileID: 954596846}
   - component: {fileID: 954596845}
+  - component: {fileID: 954596847}
   m_Layer: 5
   m_Name: PageText-3
   m_TagString: Untagged
@@ -579,7 +593,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954596843}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -619,8 +633,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29
-  m_fontSizeBase: 29
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -669,6 +683,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954596843}
   m_CullTransparentMesh: 1
+--- !u!114 &954596847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954596843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e69f10c8c0c2ca46bea578f8a7710aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 954596845}
+  TextSecond: 15
 --- !u!1 &1074888145
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,6 +1037,7 @@ GameObject:
   - component: {fileID: 1360456216}
   - component: {fileID: 1360456218}
   - component: {fileID: 1360456217}
+  - component: {fileID: 1360456219}
   m_Layer: 5
   m_Name: PageText-4
   m_TagString: Untagged
@@ -1043,7 +1072,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360456215}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -1056,10 +1085,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'As he grabbed Jeffrey, he tore him down into pieces with a menacing smile.
+  m_text: 'He tore him down into pieces.
 
-    It
-    was the start of the Jeffrey''s journey for redemption.'
+    It was the start of the Jeffrey''s
+    journey for redemption.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 495da1dad48ca7c4aaa0dfe427cf2011, type: 2}
   m_sharedMaterial: {fileID: -2214176667368200474, guid: 495da1dad48ca7c4aaa0dfe427cf2011, type: 2}
@@ -1086,8 +1115,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 29
+  m_fontSizeBase: 29
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1136,6 +1165,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360456215}
   m_CullTransparentMesh: 1
+--- !u!114 &1360456219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1360456215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e69f10c8c0c2ca46bea578f8a7710aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1360456217}
+  TextSecond: 25
 --- !u!1 &1765319008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,6 +1267,7 @@ GameObject:
   - component: {fileID: 1870360630}
   - component: {fileID: 1870360632}
   - component: {fileID: 1870360631}
+  - component: {fileID: 1870360633}
   m_Layer: 5
   m_Name: PageText-2
   m_TagString: Untagged
@@ -1258,7 +1302,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870360629}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -1271,11 +1315,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'At that day, he didn''t know that an unfortunate encounter was waiting
-    for him.
-
-    As everything was turning dark, he realized something wasn''t
-    quite right.'
+  m_text: At that day, unfortunate encounter was waiting for him.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 495da1dad48ca7c4aaa0dfe427cf2011, type: 2}
   m_sharedMaterial: {fileID: -2214176667368200474, guid: 495da1dad48ca7c4aaa0dfe427cf2011, type: 2}
@@ -1302,8 +1342,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 21
-  m_fontSizeBase: 21
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1352,6 +1392,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1870360629}
   m_CullTransparentMesh: 1
+--- !u!114 &1870360633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1870360629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e69f10c8c0c2ca46bea578f8a7710aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1870360631}
+  TextSecond: 7
 --- !u!1 &1897257217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,6 +1522,7 @@ GameObject:
   - component: {fileID: 1933130342}
   - component: {fileID: 1933130344}
   - component: {fileID: 1933130343}
+  - component: {fileID: 1933130345}
   m_Layer: 5
   m_Name: PageText-1
   m_TagString: Untagged
@@ -1542,8 +1597,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 33
+  m_fontSizeBase: 33
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1592,3 +1647,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1933130341}
   m_CullTransparentMesh: 1
+--- !u!114 &1933130345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933130341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e69f10c8c0c2ca46bea578f8a7710aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 1933130343}
+  TextSecond: 0
