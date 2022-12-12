@@ -42,7 +42,7 @@ public class RocketString : MonoBehaviour , ICanDealDamage
     {
         if (curtimer >= 1)
         {
-            Debug.Log("Player  " + playerup + "  Local Rot: " + transform.rotation.z);
+            
             curtimer -= Time.deltaTime;
             //Quaternion tempTarget = Quaternion.Euler(transform.rotation.x, transform.rotation.y, dirRandomizer );
             Quaternion tempTarget = Quaternion.Euler(transform.rotation.x, transform.rotation.y, playerup);
@@ -51,7 +51,7 @@ public class RocketString : MonoBehaviour , ICanDealDamage
         }
         else if (curtimer >= 0.5f)
         {
-            Debug.Log("Player  " + playerup + "  Local Rot: " + transform.rotation.z);
+           
             curtimer -= Time.deltaTime;
             Quaternion tempTarget = Quaternion.Euler(transform.rotation.x, transform.rotation.y, dirRandomizer);
             transform.rotation = Quaternion.Lerp(transform.rotation, tempTarget, Time.deltaTime);
@@ -74,15 +74,7 @@ public class RocketString : MonoBehaviour , ICanDealDamage
                 Destroy(gameObject);
             }
         }
-        else
-        {
-            if (collision.GetComponent<PlayerMovement>() != null)
-            {
-                var player = collision.GetComponent<PlayerMovement>();
-                player.hp -= damage;
-                Destroy(gameObject);
-            }
-        }
+     
     }
 
     public void DealDamage(float damage, Enemy enemy)

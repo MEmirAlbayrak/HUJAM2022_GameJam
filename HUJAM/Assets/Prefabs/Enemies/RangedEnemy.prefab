@@ -77,6 +77,7 @@ GameObject:
   - component: {fileID: 5587816226641711758}
   - component: {fileID: 1076736553975365565}
   - component: {fileID: 7237105885090759979}
+  - component: {fileID: 5527333600691594230}
   m_Layer: 0
   m_Name: RangedEnemy
   m_TagString: Untagged
@@ -223,12 +224,24 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: 194328eb197587c4fb4690d563240004, type: 2}
   explodeParticle: {fileID: 5437650651716103334, guid: c22447c7fc31c8f4b880941a5f0656b5, type: 3}
   explodeParticleRocket: {fileID: 9212034957704582600, guid: 9590b16026a96e94fb00652a81d14da3, type: 3}
+  spinSpeed: 2.5
+--- !u!114 &7237105885090759979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3558610856886398513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e93ccb9204d134e81b9166dc05f3a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   shootingPoints:
   - {fileID: 3223710324243312367}
   - {fileID: 2569071085280690674}
   rocketPrefab: {fileID: 4698682981687698649, guid: c76423ac0052484439eada4c8b80ac5e, type: 3}
-  spinSpeed: 2.5
---- !u!114 &7237105885090759979
+--- !u!114 &5527333600691594230
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

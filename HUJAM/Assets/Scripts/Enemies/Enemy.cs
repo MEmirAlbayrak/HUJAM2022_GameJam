@@ -11,12 +11,12 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected Rigidbody2D rb;
     [SerializeField] protected Material defaultMaterial;
     [SerializeField] protected Material flashMaterial;
-    
-        
+
+
     protected float health;
     protected float moveSpeed;
-    
-    
+
+
     //protected float rotationSpeed;
     protected float damage;
 
@@ -49,11 +49,13 @@ public abstract class Enemy : MonoBehaviour
         health -= damage;
 
         StartCoroutine(Flash());
-        
+
         rb.AddForce((transform.position - Target.transform.position).normalized * 20f, ForceMode2D.Impulse);  //Get pushed
-        
+
         Debug.Log(valuesSO.getHitSoundFX);
         Debug.Log(SoundManager.Instance);
+        if (GetComponent<BossEnemy>() != null)
+            GetComponent<BossEnemy>().HandleDamage();
 
         SoundManager.Instance.Play(valuesSO.getHitSoundFX);
         if (health <= 0)
@@ -71,17 +73,17 @@ public abstract class Enemy : MonoBehaviour
     {
         enemySpriteRenderer.material = flashMaterial;
         yield return new WaitForSecondsRealtime(0.25f);
-        enemySpriteRenderer.material= defaultMaterial;
+        enemySpriteRenderer.material = defaultMaterial;
     }
 
     public void EnemyDied()
     {
         Instantiate(explodeParticle, transform.position, Quaternion.identity);
-            
+
         GameObject lootbox = Instantiate(lootboxes[Random.Range(0, lootboxes.Count)], transform.position,
             Quaternion.Euler(new Vector3(Random.Range(-1f, 1f), 0))) as GameObject;
-        lootbox.GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f)));
-        
+
+
         Destroy(this.gameObject);
     }
 
@@ -89,14 +91,14 @@ public abstract class Enemy : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            if(collision.GetComponent<PlayerMovement>() !=null)
+            if (collision.GetComponent<PlayerMovement>() != null)
                 collision.GetComponent<PlayerMovement>().TakeDamage(damage);
 
 
         }
     }
 
-   public void Explode()
+    public void Explode()
     {
         Instantiate(explodeParticleRocket, transform.position, Quaternion.identity);
     }

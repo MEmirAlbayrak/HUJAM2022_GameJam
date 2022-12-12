@@ -7,8 +7,8 @@ public class BossEnemy : Enemy
 
     [SerializeField] GameObject Arms;
     [SerializeField] float rotateSpeed;
-    [SerializeField] int armIndex;
-    [SerializeField] int checkPoint = 20;
+    [SerializeField] int armIndex=0;
+    [SerializeField] int checkPoint = 80;
     [SerializeField] RangedEnemy[] enemyList;
     public override void Move()
     {
@@ -29,46 +29,43 @@ public class BossEnemy : Enemy
     {
         AssignValues();
 
-        //foreach(Transform child in Arms.transform)
-        //{
-        //    if (child. GetComponent<RangedEnemy>() != null)
-        //    {
-        //        child.GetComponent<RangedEnemy>().ResetMoveSpeed(0);
-        //        //child.GetComponent<RangedEnemy>().moveSpeed = 0f;
-                
-        //    }
-            
-        //}
+        foreach (Transform child in Arms.transform)
+        {
+            if (child.GetComponent<RangedEnemy>() != null)
+            {
+                child.GetComponent<RangedEnemy>().ResetMoveSpeed(0);
+                child.GetComponent<Collider2D>().enabled = false;
+                //child.GetComponent<RangedEnemy>().moveSpeed = 0f;
+
+            }
+
+        }
     }
     private void FixedUpdate()
     {
         Move();
         RotateArms();
-        Debug.Log(Target + "TARGET");
+       
     }
     // Update is called once per frame
     void Update()
     {
         
     }
-    public new void TakeDamage(float damage)
-    {
-        health -= damage;
-
-        HandleDamage();
-        if (health <= 0)
-        {
-            EnemyDied();
-            
-        }
-    }
+ 
     public void HandleDamage()
     {
-
+        Debug.Log(health);
         if(health == checkPoint)
         {
+            Debug.Log("ARMMM" + armIndex);
             enemyList[armIndex].ResetMoveSpeed(enemyList[armIndex].valuesSO.moveSpeed);
-            enemyList[armIndex+1].ResetMoveSpeed(enemyList[armIndex+1].valuesSO.moveSpeed);
+            enemyList[armIndex].GetComponent<Collider2D>().enabled = true;
+            enemyList[armIndex].gameObject.transform.parent = null;
+
+            enemyList[armIndex + 1].ResetMoveSpeed(enemyList[armIndex + 1].valuesSO.moveSpeed);
+            enemyList[armIndex+1].GetComponent<Collider2D>().enabled = true;
+            enemyList[armIndex+1].transform.parent = null;
             armIndex += 2;
             checkPoint -= 20;
         }
