@@ -101,6 +101,7 @@ public class ConnectionScript : MonoBehaviour
     void ResumeGame()
     {
 
+        CanvasHandler.Instance.connectionCanvas.SetActive(false);
         GetComponent<PlayerRotation>().enabled = true;
         GetComponent<PlayerMovement>().enabled = true;
         collected = false;
@@ -129,6 +130,7 @@ public class ConnectionScript : MonoBehaviour
         {
 
 
+            CanvasHandler.Instance.connectionCanvas.SetActive(true);
             tempCollectable = collision.gameObject;
             tempCollectable.transform.position += new Vector3(0, 500, 0);
 

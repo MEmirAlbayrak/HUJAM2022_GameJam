@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EffectsSource: {fileID: 1368002423099539968, guid: 5fbf1a51c2147fd42a7f77376a493de8, type: 3}
-  MusicSource: {fileID: 5426124675999195406}
+  MusicSource: {fileID: 4703667214013859531, guid: 753289ffb8d013e46a5f7074a728c53e, type: 3}
+  music1: {fileID: 8300000, guid: 9577a8ac79c5dca4fb901f39703944d9, type: 3}
   LowPitchRange: 0.95
   HighPitchRange: 1.05
 --- !u!82 &5426124675999195403

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collectable
   - Connection
+  - Lootbox
   layers:
   - Default
   - TransparentFX

@@ -80,7 +80,7 @@ public abstract class Enemy : MonoBehaviour
         SoundManager.Instance.Play(valuesSO.getDieSoundFX);
 
         float random = Random.Range(0, 100);
-        if(random >80)
+        if(random >75)
         {
             GameObject lootbox = Instantiate(lootboxes[Random.Range(0, lootboxes.Count)], transform.position,
             Quaternion.Euler(new Vector3(Random.Range(-1f, 1f), 0))) as GameObject;

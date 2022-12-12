@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         {
             hp -= damage;
             SoundManager.Instance.Play(getHitSFX);
-            StartCoroutine(_ProcessShake(10, 0.5f));
+            StartCoroutine(_ProcessShake(1, 5f));
             damagedDealed = true;
 
         }
@@ -78,12 +78,12 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public IEnumerator _ProcessShake(float shakeIntensity = 5f, float shakeTiming = 0.5f)
+    public IEnumerator _ProcessShake(float shakeIntensity = 1.47f, float shakeTiming = 5f)
     {
-        Noise(1, shakeIntensity);
+        Noise(5, 1.5f);
         damagedDealed = true;
 
-        yield return new WaitForSeconds(shakeTiming);
+        yield return new WaitForSeconds(1);
 
 
         timer = 0;

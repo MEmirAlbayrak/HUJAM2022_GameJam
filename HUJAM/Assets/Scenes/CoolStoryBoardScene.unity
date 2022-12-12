@@ -1087,8 +1087,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'He tore him down into pieces.
 
-    It was the start of the Jeffrey''s
-    journey for redemption.'
+    It was the start of the Simmie''s journey
+    for redemption.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 495da1dad48ca7c4aaa0dfe427cf2011, type: 2}
   m_sharedMaterial: {fileID: -2214176667368200474, guid: 495da1dad48ca7c4aaa0dfe427cf2011, type: 2}
@@ -1570,7 +1570,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jeffrey was a rebellious boy who usually wanders through unknown places.
+  m_text: Simmie was a rebellious boy who usually wanders through unknown places.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 495da1dad48ca7c4aaa0dfe427cf2011, type: 2}
   m_sharedMaterial: {fileID: -2214176667368200474, guid: 495da1dad48ca7c4aaa0dfe427cf2011, type: 2}

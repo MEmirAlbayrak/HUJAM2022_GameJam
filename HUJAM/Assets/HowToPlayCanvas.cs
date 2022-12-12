@@ -13,7 +13,7 @@ public class HowToPlayCanvas : MonoBehaviour
     void Start()
     {
         cg = GetComponent<CanvasGroup>();
-        Destroy(gameObject, 4);
+        Destroy(gameObject, 7);
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class HowToPlayCanvas : MonoBehaviour
     {
         if(ElapsedTIme < 90)
         {
-            ElapsedTIme += Time.deltaTime;
+            ElapsedTIme += Time.deltaTime*0.5f;
             cg.alpha = Mathf.Cos(ElapsedTIme) * 5;
         }
 

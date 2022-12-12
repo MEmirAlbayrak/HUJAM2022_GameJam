@@ -8,6 +8,7 @@ public class CanvasHandler : MonoBehaviour
    public GameObject winPanel;
     public GameObject bossHpBar;
     public Slider bossHpSlider;
+    public GameObject connectionCanvas;
     public static CanvasHandler Instance = null;
     void Start()
     {

@@ -12,6 +12,7 @@ public class BossEnemy : Enemy
     [SerializeField] RangedEnemy[] enemyList;
 
     [SerializeField] GameObject winCanvas;
+    [SerializeField] AudioClip bossMusic;
 
     public override void Move()
     {
@@ -34,7 +35,7 @@ public class BossEnemy : Enemy
        
     void Start()
     {
-
+        SoundManager.Instance.PlayMusic(bossMusic);
         CanvasHandler.Instance.bossHpBar.SetActive(true);
 
         AssignValues();

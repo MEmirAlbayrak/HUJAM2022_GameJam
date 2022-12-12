@@ -264,6 +264,8 @@ MonoBehaviour:
   - {fileID: 1076736552944230671}
   - {fileID: 1076736554093690611}
   - {fileID: 1076736552558303840}
+  winCanvas: {fileID: 0}
+  bossMusic: {fileID: 8300000, guid: 01891ad3718666e4f967c5a0b687e1a3, type: 3}
 --- !u!1001 &118456654
 PrefabInstance:
   m_ObjectHideFlags: 0

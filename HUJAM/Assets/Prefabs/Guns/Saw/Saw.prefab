@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 741162338}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 3.61, y: 13.24, z: 0.10961594}
-  m_LocalScale: {x: 1, y: 1, z: 9.6002}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 9.6002}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2918815699023269097}
@@ -95,11 +95,11 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13900661, y: 0.106850624}
-  m_Size: {x: 8.9492035, y: 9.720804}
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 8.496946, y: 8.496946}
   m_Direction: 0
 --- !u!1 &2918815698264340850
 GameObject:
@@ -111,13 +111,15 @@ GameObject:
   m_Component:
   - component: {fileID: 2918815698264340851}
   - component: {fileID: 2918815698264340852}
+  - component: {fileID: 1430125947}
+  - component: {fileID: 1430125950}
   m_Layer: 0
   m_Name: Testere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2918815698264340851
 Transform:
   m_ObjectHideFlags: 0
@@ -185,6 +187,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!70 &1430125947
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918815698264340850}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.5865135, y: -0.49578476}
+  m_Size: {x: 10.41732, y: 16.368431}
+  m_Direction: 0
+--- !u!114 &1430125950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2918815698264340850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1256f96fa6d59504fa7e7349e09d6906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 350
+  damage: 20
 --- !u!1 &2918815699023269096
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +312,7 @@ CapsuleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2918815699023269096}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -301,6 +333,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d7d90719ca84614787d83bda3294c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotateSpeed: 350
-  sawTransform: {fileID: 2918815698264340851}
-  damage: 20
+  sawCollider: {fileID: 2918815698264340850}

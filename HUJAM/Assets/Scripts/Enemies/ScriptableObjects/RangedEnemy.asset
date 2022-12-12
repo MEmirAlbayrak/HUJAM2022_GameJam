@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tag: RangedEnemy
   health: 20
-  moveSpeed: 1
+  moveSpeed: 0.8
   rotationSpeed: 5
-  damage: 10
+  damage: 3
   isRanged: 1
   isElite: 0
   getHitSoundFX: {fileID: 8300000, guid: 3cbfd3af323abb54eb021bbd9aabc6ce, type: 3}

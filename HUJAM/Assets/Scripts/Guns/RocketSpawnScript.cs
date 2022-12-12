@@ -23,7 +23,9 @@ public class RocketSpawnScript : ItemSpawner
             curtimer -= Time.deltaTime;
             if (curtimer <= 0)
             {
+               
                 ObjGO = Instantiate(prefabObj, SpawnPoint.position, Quaternion.identity);
+                
                 SoundManager.Instance.Play(rocketLunchSFX);
                 rocketLaunchParticle.Play();
                 curtimer = maxtimer;

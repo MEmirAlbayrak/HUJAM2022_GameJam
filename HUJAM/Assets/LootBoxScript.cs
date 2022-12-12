@@ -15,6 +15,10 @@ public class LootBoxScript : MonoBehaviour
             Instantiate(nodePrefs[Random.Range(0,nodePrefs.Length)], transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+        if(collision.gameObject.CompareTag("Lootbox"))
+        {
+            Destroy(collision.gameObject);
+        }
 
     }
 

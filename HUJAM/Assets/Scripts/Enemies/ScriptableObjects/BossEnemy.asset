@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BossEnemy
   m_EditorClassIdentifier: 
   tag: BossEnemy
-  health: 100
-  moveSpeed: 1
+  health: 1000
+  moveSpeed: 0.3
   rotationSpeed: 5
   damage: 50
   isRanged: 0
