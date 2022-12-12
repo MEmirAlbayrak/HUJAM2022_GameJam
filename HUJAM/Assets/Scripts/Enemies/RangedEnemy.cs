@@ -34,6 +34,10 @@ public class RangedEnemy : Enemy
 
         transform.position = Vector3.MoveTowards(transform.position, Target.position, moveSpeed);
     }
+    public void ResetMoveSpeed(float speed)
+    {
+        moveSpeed = speed;
+    }
 
    
 }

@@ -29,16 +29,16 @@ public class BossEnemy : Enemy
     {
         AssignValues();
 
-        foreach(Transform child in Arms.transform)
-        {
-            if (child. GetComponent<RangedEnemy>() != null)
-            {
-
-                //child.GetComponent<RangedEnemy>().moveSpeed = 0f;
-                Debug.Log(child.GetComponent<RangedEnemy>().valuesSO.moveSpeed);
-            }
+        //foreach(Transform child in Arms.transform)
+        //{
+        //    if (child. GetComponent<RangedEnemy>() != null)
+        //    {
+        //        child.GetComponent<RangedEnemy>().ResetMoveSpeed(0);
+        //        //child.GetComponent<RangedEnemy>().moveSpeed = 0f;
+                
+        //    }
             
-        }
+        //}
     }
     private void FixedUpdate()
     {
@@ -67,8 +67,8 @@ public class BossEnemy : Enemy
 
         if(health == checkPoint)
         {
-            enemyList[armIndex].valuesSO.moveSpeed;
-            enemyList[armIndex + 1].SetActive(false);
+            enemyList[armIndex].ResetMoveSpeed(enemyList[armIndex].valuesSO.moveSpeed);
+            enemyList[armIndex+1].ResetMoveSpeed(enemyList[armIndex+1].valuesSO.moveSpeed);
             armIndex += 2;
             checkPoint -= 20;
         }
