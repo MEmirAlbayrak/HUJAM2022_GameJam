@@ -26,13 +26,10 @@ public class ConnectionScript : MonoBehaviour
     {
         if (collected)
         {
-
-            Debug.Log("Aktif");
             ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             raycastHit = Physics2D.Raycast(ray.origin, ray.direction, 1000);
             if (raycastHit.collider != null)
             {
-                Debug.Log("Inside If");
 
                 CurrentClickedGameObject(raycastHit.collider.gameObject);
 
@@ -54,7 +51,6 @@ public class ConnectionScript : MonoBehaviour
     {
         if (gameObject.CompareTag("Connection"))
         {
-            Debug.Log("Inside Tag");
 
 
             tempUiConnectionPoint = gameObject.gameObject;
@@ -115,7 +111,7 @@ public class ConnectionScript : MonoBehaviour
 
             if (transform.GetChild(i).CompareTag("Connection"))
             {
-                Debug.Log("on connection child");
+                transform.GetChild(i).GetComponent<SpriteRenderer>().enabled = false;
                 transform.GetChild(i).GetComponent<SpriteRenderer>().enabled = false;
             }
 

@@ -121,7 +121,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -160,10 +160,6 @@ MonoBehaviour:
   flashMaterial: {fileID: 2100000, guid: 194328eb197587c4fb4690d563240004, type: 2}
   explodeParticle: {fileID: 5437650651716103334, guid: c22447c7fc31c8f4b880941a5f0656b5, type: 3}
   explodeParticleRocket: {fileID: 9212034957704582600, guid: 9590b16026a96e94fb00652a81d14da3, type: 3}
-  shootingPoints:
-  - {fileID: 6485716665737223559}
-  - {fileID: 8202689138805888508}
-  rocketPrefab: {fileID: 4698682981687698649, guid: c76423ac0052484439eada4c8b80ac5e, type: 3}
   spinSpeed: 2.5
 --- !u!1 &6485716665737223559
 GameObject:

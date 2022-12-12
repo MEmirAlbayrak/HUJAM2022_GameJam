@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97665a32695c9084c8dc2e86a6ebc2fe, type: 3}
   m_Name: EliteRangedEnemy
   m_EditorClassIdentifier: 
-  tag: EliteSmallEnemy
-  health: 200
+  tag: EliteRangedEnemy
+  health: 40
   moveSpeed: 1
   rotationSpeed: 5
   damage: 50
   isRanged: 1
   isElite: 1
-  getHitSoundFX: {fileID: 8300000, guid: af06d7def0d3ca74fbfc8ba4dbe8e634, type: 3}
+  getHitSoundFX: {fileID: 8300000, guid: 3cbfd3af323abb54eb021bbd9aabc6ce, type: 3}
+  getDieSoundFX: {fileID: 8300000, guid: 7045640c66fc6f549bb0e8bf8ac124f3, type: 3}

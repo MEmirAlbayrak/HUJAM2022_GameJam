@@ -64,7 +64,8 @@ public class ObjectPooler : MonoBehaviour
 
     public GameObject GetObject(GameObject targetPrefab)
     {
-        var desiredPool = PoolList.Find(p => p.Prefab == targetPrefab);
+        var desiredPool = PoolList.Find(p => p.Tag == targetPrefab.GetComponent<Enemy>().valuesSO.tag);
+        Debug.Log("Desired pool is " + desiredPool.Tag);
 
         if (desiredPool.ObjectPool.Count > 0)
         {

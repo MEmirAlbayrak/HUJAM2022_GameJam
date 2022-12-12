@@ -18,10 +18,13 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] AudioClip dieSFX;
     [SerializeField] Slider hpSlider;
 
+
+    [SerializeField] GameObject tryAgainCanvas;
     private void Start()
     {
         lastPlayerpos = gameObject.transform.position;
         timer = 0;
+        tryAgainCanvas.SetActive(false);
     }
 
     void Update()
@@ -57,6 +60,10 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             SoundManager.Instance.Play(dieSFX);
+            Time.timeScale = 0;
+            tryAgainCanvas.SetActive(true);
+
+
         }
     }
     float newY;

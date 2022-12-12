@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: SmallEnemy
   m_EditorClassIdentifier: 
   tag: SmallEnemy
-  health: 100
+  health: 20
   moveSpeed: 1
   rotationSpeed: 5
   damage: 20
   isRanged: 0
   isElite: 0
-  getHitSoundFX: {fileID: 8300000, guid: af06d7def0d3ca74fbfc8ba4dbe8e634, type: 3}
+  getHitSoundFX: {fileID: 8300000, guid: 3cbfd3af323abb54eb021bbd9aabc6ce, type: 3}
+  getDieSoundFX: {fileID: 8300000, guid: 7045640c66fc6f549bb0e8bf8ac124f3, type: 3}

@@ -47,13 +47,11 @@ public abstract class Enemy : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         health -= damage;
-
+        Debug.Log("damage: " + damage);
         StartCoroutine(Flash());
 
         rb.AddForce((transform.position - Target.transform.position).normalized * 20f, ForceMode2D.Impulse);  //Get pushed
 
-        Debug.Log(valuesSO.getHitSoundFX);
-        Debug.Log(SoundManager.Instance);
         if (GetComponent<BossEnemy>() != null)
             GetComponent<BossEnemy>().HandleDamage();
 
@@ -81,11 +79,16 @@ public abstract class Enemy : MonoBehaviour
         Instantiate(explodeParticle, transform.position, Quaternion.identity);
         SoundManager.Instance.Play(valuesSO.getDieSoundFX);
 
-        GameObject lootbox = Instantiate(lootboxes[Random.Range(0, lootboxes.Count)], transform.position,
+        float random = Random.Range(0, 100);
+        if(random >80)
+        {
+            GameObject lootbox = Instantiate(lootboxes[Random.Range(0, lootboxes.Count)], transform.position,
             Quaternion.Euler(new Vector3(Random.Range(-1f, 1f), 0))) as GameObject;
 
+        }
 
-        Destroy(this.gameObject);
+
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

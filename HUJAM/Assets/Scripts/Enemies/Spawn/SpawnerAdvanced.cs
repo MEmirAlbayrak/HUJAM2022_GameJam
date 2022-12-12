@@ -24,7 +24,6 @@ public class SpawnerAdvanced : MonoBehaviour
     {
         _objectPool = FindObjectOfType<ObjectPooler>();
         _currentStage = allStages[_stageIndex];
-        Debug.Log("Bruh");
         SetEnemyQueue();
 
         Invoke(nameof(SpawnBoss), bossSpawnTime);
@@ -67,6 +66,7 @@ public class SpawnerAdvanced : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log(EnemyQueue.Peek());
                     GameObject newObject = _objectPool.GetObject(EnemyQueue.Dequeue());
                     newObject.transform.position = spawnPlaces[Random.Range(0, spawnPlaces.Count)].position;
                     newObject.SetActive(true);

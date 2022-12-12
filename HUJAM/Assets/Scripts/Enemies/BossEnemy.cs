@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BossEnemy : Enemy
 {
@@ -9,6 +10,8 @@ public class BossEnemy : Enemy
     [SerializeField] int armIndex = 0;
     [SerializeField] int checkPoint = 80;
     [SerializeField] RangedEnemy[] enemyList;
+
+    [SerializeField] GameObject winCanvas;
 
     public override void Move()
     {
@@ -24,11 +27,18 @@ public class BossEnemy : Enemy
     {
         Arms.transform.RotateAround(transform.position, transform.forward, Time.deltaTime * 10f);
     }
+    private void Awake()
+    {
+        winCanvas = GameObject.Find("YouWinPanel");
+    }
 
     void Start()
     {
-        AssignValues();
 
+        
+
+        AssignValues();
+       
         foreach (Transform child in Arms.transform)
         {
             if (child.GetComponent<RangedEnemy>() != null)
@@ -49,6 +59,7 @@ public class BossEnemy : Enemy
     // Update is called once per frame
     public override void TakeDamage(float damage)
     {
+        
         health -= damage;
 
         StartCoroutine(Flash());
@@ -62,6 +73,8 @@ public class BossEnemy : Enemy
         if (health <= 0)
         {
             EnemyDied();
+            winCanvas.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 

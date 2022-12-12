@@ -18,7 +18,6 @@ public class TimerCode : MonoBehaviour
         currCountdownValue = countdownValue;
         while (currCountdownValue > 0)
         {
-            Debug.Log("Countdown: " + currCountdownValue);
             yield return new WaitForSeconds(1.0f);
             currCountdownValue--;
         }
