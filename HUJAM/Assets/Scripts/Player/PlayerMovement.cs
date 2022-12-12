@@ -16,8 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Image damageImage;
     [SerializeField] AudioClip getHitSFX;
     [SerializeField] AudioClip dieSFX;
-
-
+    [SerializeField] Slider hpSlider;
 
     private void Start()
     {
@@ -35,6 +34,8 @@ public class PlayerMovement : MonoBehaviour
         {
             ScreenBright();
         }
+
+        hpSlider.value = hp;
 
     }
     private void FixedUpdate()

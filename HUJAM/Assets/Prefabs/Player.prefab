@@ -552,6 +552,8 @@ MonoBehaviour:
   vCam: {fileID: 0}
   damageImage: {fileID: 0}
   getHitSFX: {fileID: 8300000, guid: 3cbfd3af323abb54eb021bbd9aabc6ce, type: 3}
+  dieSFX: {fileID: 0}
+  hpSlider: {fileID: 0}
   starsGameobject: {fileID: 0}
   parallaxEffect: 0
 --- !u!114 &3856056526076137140
