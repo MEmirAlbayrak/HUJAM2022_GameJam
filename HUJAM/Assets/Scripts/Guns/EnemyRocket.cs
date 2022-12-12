@@ -10,7 +10,7 @@ public class EnemyRocket : MonoBehaviour
     [SerializeField] private float rocketSpeed;
     [SerializeField] private float timeAlive;
     private static PlayerMovement _player;
-
+    [SerializeField] AudioClip explosion;
     private void OnEnable()
     {
         _player = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
@@ -31,6 +31,7 @@ public class EnemyRocket : MonoBehaviour
         if (col.CompareTag("Player"))
         {
             _player.hp -= damage;
+            SoundManager.Instance.Play(explosion);
             Destroy(gameObject);
         }
     }

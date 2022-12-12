@@ -3,7 +3,15 @@ guid: 1243105bf993d074b8fe6d4b07b8caf0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - valuesSO: {instanceID: 0}
+  - rb: {instanceID: 0}
+  - defaultMaterial: {instanceID: 0}
+  - flashMaterial: {instanceID: 0}
+  - getHitSFX: {fileID: 8300000, guid: 3cbfd3af323abb54eb021bbd9aabc6ce, type: 3}
+  - dieSFX: {fileID: 8300000, guid: 7045640c66fc6f549bb0e8bf8ac124f3, type: 3}
+  - explodeParticle: {instanceID: 0}
+  - explodeParticleRocket: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

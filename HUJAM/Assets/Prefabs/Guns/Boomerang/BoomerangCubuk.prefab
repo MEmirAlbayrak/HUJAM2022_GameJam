@@ -273,6 +273,7 @@ MonoBehaviour:
   ObjGO: {fileID: 0}
   SpawnPoint: {fileID: 8880300560399107028}
   route: {fileID: 0}
+  boomerangThrofSFX: {fileID: 8300000, guid: ff8c6d822c815344dbcf8c4381243a5b, type: 3}
 --- !u!70 &1953928957
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

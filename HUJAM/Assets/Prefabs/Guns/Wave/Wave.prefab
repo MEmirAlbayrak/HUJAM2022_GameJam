@@ -437,6 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveTransform: {fileID: 5981882665613189147}
   waveFx: {fileID: 7348179560781098262}
+  shockWaveSFX: {fileID: 8300000, guid: dde6b31cd7bd5ce428d657d9d51fdaf1, type: 3}
 --- !u!1001 &5415500350504336476
 PrefabInstance:
   m_ObjectHideFlags: 0

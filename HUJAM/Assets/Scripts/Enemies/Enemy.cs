@@ -79,6 +79,7 @@ public abstract class Enemy : MonoBehaviour
     public void EnemyDied()
     {
         Instantiate(explodeParticle, transform.position, Quaternion.identity);
+        SoundManager.Instance.Play(valuesSO.getDieSoundFX);
 
         GameObject lootbox = Instantiate(lootboxes[Random.Range(0, lootboxes.Count)], transform.position,
             Quaternion.Euler(new Vector3(Random.Range(-1f, 1f), 0))) as GameObject;

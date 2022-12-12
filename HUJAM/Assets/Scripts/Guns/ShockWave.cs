@@ -11,12 +11,16 @@ public class ShockWave : Collectable
     private bool _waveActive;
 
     [SerializeField] GameObject waveFx;
+    [SerializeField] AudioClip shockWaveSFX;
+    bool oneTime;
+
     private void Start()
     {
-        _waveActive = true; 
+        oneTime = false;
+        _waveActive = true;
         maxtimer = 4f;
         curtimer = maxtimer;
-        if(_waveActive)
+        if (_waveActive)
         {
             waveFx.SetActive(true);
         }
@@ -25,32 +29,39 @@ public class ShockWave : Collectable
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(_waveActive)
+        if (_waveActive)
         {
 
-        if (curtimer >= 0)
-        {
-            curtimer -= Time.deltaTime;
-        }
-        else if (curtimer >= -1.5f)
-        {
-            curtimer -= Time.deltaTime;
-            Grow();
-        }
-        else
-        {
-            ResetSize();
-            curtimer = maxtimer;
+            if (curtimer >= 0)
+            {
+                curtimer -= Time.deltaTime;
+            }
+            else if (curtimer >= -1.5f)
+            {
+                curtimer -= Time.deltaTime;
+                Grow();
+                if (!oneTime)
+                {
+                    SoundManager.Instance.Play(shockWaveSFX);
+                    oneTime = true;
+                }
+                
+            }
+            else
+            {
+                ResetSize();
+                curtimer = maxtimer;
+                oneTime = false;
 
-        }
+            }
         }
 
-    
+
     }
 
     void Grow()
     {
-       waveTransform.localScale += new Vector3(0.5f, 0.5f, 0);
+        waveTransform.localScale += new Vector3(0.5f, 0.5f, 0);
     }
 
     void ResetSize()
@@ -59,8 +70,8 @@ public class ShockWave : Collectable
 
     }
 
-   
-    
+
+
 
 
 }

@@ -220,6 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   capsuleCollider: {fileID: 8568086697685829973}
   maskObjectSpriteRenderer: {fileID: 5258156917770970048}
+  FreezeAudio: {fileID: 8300000, guid: afefac1825aaef842822cbdd5a89979b, type: 3}
 --- !u!1 &8568086697685829975
 GameObject:
   m_ObjectHideFlags: 0

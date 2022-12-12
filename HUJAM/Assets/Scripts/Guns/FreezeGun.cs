@@ -8,8 +8,13 @@ public class FreezeGun : Collectable
     private float maxtimer;
     private float curtimer;
     [SerializeField] SpriteRenderer maskObjectSpriteRenderer;
+
+    bool oneTime;
+    [SerializeField] AudioClip FreezeAudio;
+
     private void Start()
     {
+        oneTime = false;
         maxtimer = 4f;
         curtimer = maxtimer;
     }
@@ -38,11 +43,17 @@ public class FreezeGun : Collectable
                 maskObjectSpriteRenderer.color = temp;
             }
             capsuleCollider.enabled = true;
+
+            if (!oneTime)
+            {
+                SoundManager.Instance.Play(FreezeAudio);
+                oneTime = true;
+            }
         }
         else
         {
             curtimer = maxtimer;
-
+            oneTime = false;
         }
     }
 }

@@ -105,6 +105,7 @@ MonoBehaviour:
   damage: 20
   playerTransform: {fileID: 0}
   _isPlayerRocket: 1
+  explodeSFX: {fileID: 8300000, guid: 766936434de75514db64226662d5d90c, type: 3}
 --- !u!70 &439406976920423868
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

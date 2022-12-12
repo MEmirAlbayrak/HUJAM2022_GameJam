@@ -24,6 +24,7 @@ public class RouteFollow : MonoBehaviour , ICanDealDamage
     [SerializeField] float damage;
     public float Damage { get => damage; set => damage = value; }
 
+
     // Start is called before the first frame update
     void Start()
     {

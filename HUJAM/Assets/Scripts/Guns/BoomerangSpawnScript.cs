@@ -5,6 +5,8 @@ using UnityEngine;
 public class BoomerangSpawnScript : ItemSpawner
 {
     [SerializeField] GameObject route;
+
+    [SerializeField] AudioClip boomerangThrofSFX;
     void Start()
     {
 
@@ -22,6 +24,7 @@ public class BoomerangSpawnScript : ItemSpawner
 
 
             ObjGO.GetComponent<RouteFollow>().routes[0] = route.transform;
+            SoundManager.Instance.Play(boomerangThrofSFX);
         }
      
     }

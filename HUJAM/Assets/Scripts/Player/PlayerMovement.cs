@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     bool damagedDealed;
     [SerializeField] Image damageImage;
     [SerializeField] AudioClip getHitSFX;
+    [SerializeField] AudioClip dieSFX;
+
+
 
     private void Start()
     {
@@ -49,6 +52,10 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(_ProcessShake(10, 0.5f));
             damagedDealed = true;
 
+        }
+        else
+        {
+            SoundManager.Instance.Play(dieSFX);
         }
     }
     float newY;

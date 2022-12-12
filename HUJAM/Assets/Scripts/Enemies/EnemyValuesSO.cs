@@ -13,4 +13,5 @@ public class EnemyValuesSO : ScriptableObject
     public bool isRanged;
     public bool isElite;
     public AudioClip getHitSoundFX;
+    public AudioClip getDieSoundFX;
 }

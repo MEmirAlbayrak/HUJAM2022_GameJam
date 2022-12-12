@@ -21,6 +21,7 @@ public class RocketString : MonoBehaviour , ICanDealDamage
 
     public bool _isPlayerRocket;
 
+    [SerializeField] AudioClip explodeSFX;
     private void Start()
     {
         maxtimer = 1.3f;
@@ -80,5 +81,6 @@ public class RocketString : MonoBehaviour , ICanDealDamage
     public void DealDamage(float damage, Enemy enemy)
     {
         enemy.TakeDamage(damage);
+        SoundManager.Instance.Play(explodeSFX);
     }
 }
