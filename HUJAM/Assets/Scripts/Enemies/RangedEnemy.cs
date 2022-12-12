@@ -6,14 +6,18 @@ using Random = UnityEngine.Random;
 
 public class RangedEnemy : Enemy
 {
-    [SerializeField] private GameObject[] shootingPoints;
-    [SerializeField] private GameObject rocketPrefab;
+   
     [SerializeField] private float spinSpeed;
-    
-    private void Start()
+
+
+    private void Awake()
     {
         AssignValues();
-        StartCoroutine(Attack());
+        
+    }
+    private void Start()
+    {
+        
     }
 
     private void FixedUpdate()
@@ -31,13 +35,5 @@ public class RangedEnemy : Enemy
         transform.position = Vector3.MoveTowards(transform.position, Target.position, moveSpeed);
     }
 
-    private IEnumerator Attack()
-    {
-        while (true)
-        {
-            yield return new WaitForSecondsRealtime(Random.Range(4f, 6f));
-            Instantiate(rocketPrefab, shootingPoints[0].transform);
-            Instantiate(rocketPrefab, shootingPoints[1].transform);
-        }
-    }
+   
 }

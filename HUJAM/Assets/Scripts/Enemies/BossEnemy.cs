@@ -9,7 +9,7 @@ public class BossEnemy : Enemy
     [SerializeField] float rotateSpeed;
     [SerializeField] int armIndex;
     [SerializeField] int checkPoint = 20;
-    [SerializeField] GameObject[] enemyList;
+    [SerializeField] RangedEnemy[] enemyList;
     public override void Move()
     {
         Debug.Log("HERE");
@@ -28,6 +28,17 @@ public class BossEnemy : Enemy
     void Start()
     {
         AssignValues();
+
+        foreach(Transform child in Arms.transform)
+        {
+            if (child. GetComponent<RangedEnemy>() != null)
+            {
+
+                //child.GetComponent<RangedEnemy>().moveSpeed = 0f;
+                Debug.Log(child.GetComponent<RangedEnemy>().valuesSO.moveSpeed);
+            }
+            
+        }
     }
     private void FixedUpdate()
     {
@@ -56,7 +67,7 @@ public class BossEnemy : Enemy
 
         if(health == checkPoint)
         {
-            enemyList[armIndex].SetActive(false);
+            enemyList[armIndex].valuesSO.moveSpeed;
             enemyList[armIndex + 1].SetActive(false);
             armIndex += 2;
             checkPoint -= 20;
