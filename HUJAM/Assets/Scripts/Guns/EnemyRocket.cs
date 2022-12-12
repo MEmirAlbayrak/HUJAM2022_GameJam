@@ -5,14 +5,16 @@ using UnityEngine;
 
 public class EnemyRocket : MonoBehaviour
 {
+    [SerializeField] private float damage;
     [SerializeField] private Rigidbody2D rocketRb;
     [SerializeField] private float rocketSpeed;
     [SerializeField] private float timeAlive;
-    private static GameObject _player;
+    private static PlayerMovement _player;
 
     private void OnEnable()
     {
-        _player = GameObject.FindWithTag("Player");
+        _player = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
+        
     }
 
     void Start()
@@ -22,5 +24,14 @@ public class EnemyRocket : MonoBehaviour
         //rocketRb.transform.localEulerAngles = new Vector3(0f, 0f, _player.transform.position.z - transform.position.z);
 
         Destroy(gameObject, timeAlive);
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            _player.hp -= damage;
+            Destroy(gameObject);
+        }
     }
 }
